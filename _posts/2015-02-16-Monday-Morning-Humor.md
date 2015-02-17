@@ -22,7 +22,7 @@ function qualityOfToday(numberOfMeetingsToday){
 }
 
 alert(qualityOfToday(numberOfMeetingsToday = 1));
-{% end highlight %}
+{% endhighlight %}
 
 On the other hand, garage is a bit cleaner and the air compressor now has power.  Thanks to a friend for showing me how to work inside my breaker box.  Ever since the military, I am extremely hesitant to ever deal with electricity much less inside my breaker box.
 
