@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#" debug="true">
+  <head>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="keywords" content="{{ page.keywords }}" />
+
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    <meta name="author" content="{{ site.name }}" />
+    <meta name="description" content="{{ site.description }}">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+
+    <link rel="icon" type="image/ico"  href="../images/favicon.ico">
+
+    <link href="resources/photoswipe.css?v={{site.pswpversion}}-{{site.siteversion}}" rel="stylesheet" />
+    <link href="resources/default-skin/default-skin.css?v={{site.pswpversion}}-{{site.siteversion}}" rel="stylesheet" />
+    
+    <script src="resources/photoswipe.min.js?v={{site.pswpversion}}-{{site.siteversion}}"></script>
+    <script src="resources/photoswipe-ui-default.min.js?v={{site.pswpversion}}-{{site.siteversion}}"></script>
+  </head>
+
+  <body>
+
+
+
+    <script>
+      // Disable codepens on small screens, sort of.
+      if(screen.width && screen.width < 1200 ) {
+        var els = document.querySelectorAll('.codepen-embed');
+
+        for (i = 0; i < els.length; ++i) {
+          els[i].className += " codepen-embed--disabled";
+        }
+      } else {
+        document.write('<script src="//assets.codepen.io/assets/embed/ei.js"><' + '\/script>');
+      }
+    </script>
+  
+
+
+    {% endif %}
+
+
+
+
+  </body>
+</html>
