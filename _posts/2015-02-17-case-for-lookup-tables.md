@@ -40,3 +40,7 @@ CREATE TABLE activityDates
 We then insert every record id from the table we want to store this data against.  Any action that would impact these dates, in this case notes, we update this table.  Then when we do reporting, instead of writing CTEs to get MIN() or MAX() dates from table1, we join to table activityDates istead.
 
 This is of course a very simplified version of what I spent all day today and part of yesterday doing.  I first had to spend time trying to optimize it as it was so we could "hotfix" it, which means no schema changes.
+
+### Things I like
+
++ Nothing, I spent all day trying to optimize queries for someone else!
