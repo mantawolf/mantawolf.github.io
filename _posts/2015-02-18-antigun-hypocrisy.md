@@ -34,6 +34,8 @@ And in what are considered to be "developed" countries
 
 Read it.  According to FBI stats, violent crimes and murder rates have fallen in the USA while gun ownership is continuing to reach record highs.  Odd if you listen to the media tell it we are all 2 seconds away from being shot.
 
+Also remember that the duty to protect yourself and your family falls on you.  Not the police, the Supreme Court already decided that.  ![alt text](http://www.nytimes.com/2005/06/28/politics/28scotus.html?_r=0 "NY Times")  Buy a gun, learn to use it, and teach your kids about it rather than hiding it from them and making them fear it.  Everyone knows kids do whatever you tell them not to.
+
 ### Things I like
 
 #### Guns made in Texas
