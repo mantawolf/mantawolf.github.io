@@ -1,58 +1,37 @@
-<!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#" debug="true">
-  <head>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <meta name="keywords" content="{{ page.keywords }}" />
+---
+layout: default
+---
 
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+<article class="post">
+  <h1>{{ page.title }}</h1>
 
-    <meta name="author" content="{{ site.name }}" />
-    <meta name="description" content="{{ site.description }}">
+  <div class="entry">
+    {{ content }}
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<div id="sliderFrame">
+		<div id="slider">
+			{% for image in page.images %}
+			    <img src="{{ image.source }}" title="{{ image.title }}" />
+			{% endfor %}
+		</div>
+		<!--Custom navigation buttons on both sides-->
+		<div class="group1-Wrapper">
+		    <a onclick="imageSlider.previous()" class="group1-Prev"></a>
+		    <a onclick="imageSlider.next()" class="group1-Next"></a>
+		</div>
+		<!--nav bar-->
+		<div style="text-align:center;padding:20px;z-index:20;">
+		    <a onclick="imageSlider.previous()" class="group2-Prev"></a>
+		    <a id='auto' onclick="switchAutoAdvance()"></a>
+		    <a onclick="imageSlider.next()" class="group2-Next"></a>
+		</div>
+	</div>
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  </div>
 
-    <link rel="icon" type="image/ico"  href="../images/favicon.ico">
+  <div class="date">
+    Written on {{ page.date | date: "%B %e, %Y" }}
+  </div>
 
-    <link href="resources/photoswipe.css?v={{site.pswpversion}}-{{site.siteversion}}" rel="stylesheet" />
-    <link href="resources/default-skin/default-skin.css?v={{site.pswpversion}}-{{site.siteversion}}" rel="stylesheet" />
-    
-    <script src="resources/photoswipe.min.js?v={{site.pswpversion}}-{{site.siteversion}}"></script>
-    <script src="resources/photoswipe-ui-default.min.js?v={{site.pswpversion}}-{{site.siteversion}}"></script>
-  </head>
-
-  <body>
-
-
-
-    <script>
-      // Disable codepens on small screens, sort of.
-      if(screen.width && screen.width < 1200 ) {
-        var els = document.querySelectorAll('.codepen-embed');
-
-        for (i = 0; i < els.length; ++i) {
-          els[i].className += " codepen-embed--disabled";
-        }
-      } else {
-        document.write('<script src="//assets.codepen.io/assets/embed/ei.js"><' + '\/script>');
-      }
-    </script>
-  
-
-
-    {% endif %}
-
-
-
-
-  </body>
-</html>
+  {% include disqus.html disqus_identifier=page.disqus_identifier %}
+</article>
