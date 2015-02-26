@@ -34,4 +34,4 @@ Lastly, planning your work for a sprint cycle is important.  It is also very imp
 Ick.
 
 ### Things I like
-+ Writing code when I get do
++ Writing code when I get to
