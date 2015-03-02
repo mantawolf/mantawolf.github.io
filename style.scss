@@ -21,6 +21,10 @@ body {
 	background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
+  background-image:  url(../resources/Zen_SamuraiLeft.jpg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-color: #FFF;
 }
 
 .container {
