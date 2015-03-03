@@ -19,4 +19,4 @@ From there, it was marriage and kids.  Went to work eventually at GTE, which wou
 
 ### Contact me
 
-[marvin.eads@eadshome.net](mailto:marvin.eads@eadshome.net)
+{{ site.baseurl }}/about
