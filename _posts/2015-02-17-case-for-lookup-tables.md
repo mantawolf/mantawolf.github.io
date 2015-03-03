@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Lookup Tables
+title: A case for lookup tables
 desc: "This is a use case for tables that store data only used for reporting purposes."
 keywords: "sqlserver,lookup table,reporting,big data"
 ---
-### A case for lookup tables
 
 As we have established already, I work in development.  I happen to be pretty good with data and getting it how I want it (which isn't always right) and performance tuning.  We will now establish that I work with a large, old application.  We do very little greenfield work and large amounts of that revolve around reporting.  Which brings us to a report being designed for a customer we intend to use for many customers.  This customer happens to have large amounts of data and within the bounds of our present application, the report as it was written was not a performer.  I mean we are executing common table expressions to get a MIN() on a date field on a table containing 36 million records and joining to it against a table with 9 million records.
 

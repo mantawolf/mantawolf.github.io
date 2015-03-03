@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Your tax money at work
+title: Your tax money at work: State Secrets
 desc: "Your tax dollars are being used in a war against you and you don't even know it"
 keywords: "secrets,tax dollars,war,privacy"
 ---
-### State Secrets
 
 Ever heard of StingRay?  It is this great product made by Harris Corporation/Boeing.  It allows a person to setup a fake cell tower and intercept cellular data.  The FBI and the Police forces are using these.  How and why are they being used?  How often?  Against who?  Well we do not know the answer to that.  The FBI is telling police departments not to disclose that data AND they sign agreements to keep that data confidential.
 

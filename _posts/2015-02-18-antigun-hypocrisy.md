@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Anti-gun Hypocrisy
+title: Anti-gun Hypocrisy Knows No Bounds
 desc: "Discussing the anti-gun folks hypocrisy"
 keywords: "antigun,hypocrisy,firearms,rights"
 ---
-### Anti-gun Hypocrisy Knows No Bounds
 
 I am a gun owner.  Shocking right, a technology person that isn't so liberal that they don't own guns.  But wait, important people say I shouldn't own guns!  They kill!  Apparently the people who think we as citizens should not own guns are getting in trouble for guns!
 

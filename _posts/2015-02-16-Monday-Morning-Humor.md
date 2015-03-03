@@ -4,7 +4,6 @@ title: First Monday with a Blog
 desc: "This is my first Monday with a blog entry talking about hooking up a used Porter Cable compressor to a 220V single phase power connection."
 keywords: "Porter Cable compressor,220V Single Phase,breakers,disconnect box"
 ---
-### First Monday with a blog
 
 So I work on an agile team which of course means working close together.  Seems completely contrary to the developer mindset.  Which of course means I spend all day on the headset and never have a "good day" as described by Scott Adams...  And me...
 

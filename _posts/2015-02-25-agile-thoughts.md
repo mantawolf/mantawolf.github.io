@@ -5,8 +5,6 @@ desc: "Some general thoughts on agile programming, slicing and spiking"
 keywords: "agile,slicing,spiking,work planning"
 ---
 
-### Agile
-
 The team I work with has certainly learned a lot since we started working under agile.  Most of this is all documented elsewhere and all I offer is another "opinion" in the sea of other opinions.
 
 #### Slicing

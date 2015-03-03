@@ -5,7 +5,6 @@ desc: "This is a discussion of some of the finer points that happen during conca
 keywords: "sqlserver,varchar,nvarchar,concatenation"
 ---
 
-### SQLServer *VARCHAR* Concatenation
 SQLServer 2008 and greater has some behaviors for handling strings and concatenation that a programmer should be aware of.  To start with, you have a data type of *VARCHAR* and *NVARCHAR*.  The difference between the two is unicode support.  You will find a number of character data types with an *N* variant.  The *N* type supports unicode and requires twice as much space to store.  When you declare these data types, you can declare them as *VARCHAR[(N|MAX)]* where *N* is the number of characters to allocate.  For a *VARCHAR*, this is 1-8000, for a *NVARCHAR* this is 1-4000.  Remember a unicode character takes twice as much space to store.  Also note that if you do not specify the length, the default is 1.
 
 The *MAX* piece however is interesting.  For all purposes, this causes the *VARCHAR* to be treated like *TEXT* and allows for the storage of 2GB of data.  The real limit is the maximum size of your *TEMPDB*.  Remember that for a *NVARCHAR* the number of characters is half because this is a data type that stores unicode.
