@@ -91,28 +91,13 @@ FOR XML RAW, ROOT('users')
 
 {%highlight xml %}
 
-<Users>
-  <User userId="1" firstName="Jack" lastName="Smith">
-    <residentState>TX</residentState>
-    <userName>jjSmith</userName>
-  </User>
-  <User userId="2" firstName="Elvis" lastName="Presley">
-    <residentState>LA</residentState>
-    <userName>the_king</userName>
-  </User>
-  <User userId="3" firstName="Jack" lastName="Johnson">
-    <residentState>FL</residentState>
-    <userName>some_dude</userName>
-  </User>
-  <User userId="4" firstName="Bruce" lastName="Willis">
-    <residentState>NC</residentState>
-    <userName>actionMan</userName>
-  </User>
-  <User userId="5" firstName="Arnold" lastName="Kinston">
-    <residentState>ND</residentState>
-    <userName>whos_this</userName>
-  </User>
-</Users>
+<users>
+  <row Id="1" firstName="Jack" lastName="Smith" residentState="TX" userName="jjSmith" />
+  <row Id="2" firstName="Elvis" lastName="Presley" residentState="LA" userName="the_king" />
+  <row Id="3" firstName="Jack" lastName="Johnson" residentState="FL" userName="some_dude" />
+  <row Id="4" firstName="Bruce" lastName="Willis" residentState="NC" userName="actionMan" />
+  <row Id="5" firstName="Arnold" lastName="Kinston" residentState="ND" userName="whos_this" />
+</users>
 
 {% endhighlight %}
 
