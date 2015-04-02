@@ -9,7 +9,7 @@ A few months ago a co-worker and I decided to upgrade our local web development 
 
 Like most stories that probably start that way, there is an "until today" clause involved.
 
-Today, my co-worked tells me he thinks he found a problem running a report.  It took 5 minutes to find the block of SQL that was causing the issue.  When you compare the return results of ISDATE() against a BIT field, you get a "severe error" and your results, if any, should be discarded.
+Today, my co-worker tells me he thinks he found a problem running a report.  It took 5 minutes to find the block of SQL that was causing the issue.  When you compare the return results of ISDATE() against a BIT field, you get a "severe error" and your results, if any, should be discarded.
 
 Go ahead, try it.  The branch below that runs for @fail = 1 will generate an error.  If you change @fail to 0, it works.  The working condition is just ugly.
 
