@@ -1,14 +1,31 @@
 ---
 layout: default
 ---
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/resources/contact.css" />
 <div class="posts">
-  <form action="https://getsimpleform.com/messages?form_api_token=2cf6bd15735e916486a2660d1143d342" method="post">
-    <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
-    <!-- <input type="hidden" name="redirect_to" value="{{ site.baseurl }}/" /> -->
-    Name: <input type="text" name="name" />
-    Reply To: <input type="text" name="email" />
-    Subject: <input type="text" name="title" />
-    <textarea name="message"></textarea>
-    <input type="submit" value="Tell Me Something" />
-  </form>
+<form action="https://getsimpleform.com/messages?form_api_token=2cf6bd15735e916486a2660d1143d342" method="post" class="basic-grey">
+    <h1>Contact Form 
+        <span>Please fill all the texts in the fields.</span>
+    </h1>
+    <label>
+        <span>Your Name :</span>
+        <input id="name" type="text" name="name" placeholder="Your Full Name" />
+    </label>
+    <label>
+        <span>Your Email :</span>
+        <input id="email" type="email" name="email" placeholder="Valid Email Address" />
+    </label>    
+    <label>
+        <span>Subject :</span>
+        <input id="subject" type="text" name="subject" placeholder="Subject" />
+    </label>    
+    <label>
+        <span>Message :</span>
+        <textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
+    </label> 
+    <label>
+        <span>&nbsp;</span> 
+        <input type="button" class="button" value="Send" /> 
+    </label>    
+</form>
 </div>
