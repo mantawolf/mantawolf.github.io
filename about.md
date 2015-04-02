@@ -17,4 +17,4 @@ From there, it was marriage and kids.  Went to work eventually at GTE, which wou
 
 
 
-### [Contact me]({{ site.baseurl }}/about/)
+### [Contact me]({{ site.baseurl }}/contact)
