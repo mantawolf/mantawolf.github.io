@@ -68,7 +68,7 @@ Here is a table showing how much space is taken by each date type available in S
 |Smalldatetime|1900-01-01 00:00|2079-06-06 23:59|
 |Date|0001-01-01|9999-12-31|3 bytes|
 |Time|00:00:00.0000000|23:59:59.9999999|
-|Datetime2|0001-01-01 00:00:00.0000000|9999-12-31 23:59:59.9999999|Precision <=2 = 6 bytes, precision <=4 = 7 bytes precision <=7 = 8 bytes|
+|Datetime2|0001-01-01 00:00:00.0000000|9999-12-31 23:59:59.9999999|Precision <=2 = 6 bytes<br />Precision <=4 = 7 bytes<br />Precision <=7 = 8 bytes|
 
 If you want the code samples in full, they are on [pastebin.com](http://pastebin.com/HFnRzKki).
 
