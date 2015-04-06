@@ -56,21 +56,19 @@ DROP TABLE ##table1
 
 As can be seen by running the example, **DATETIME2** is a more accurate data type.  It records down to the nanosecond.  For most purposes of a web app, I dont even need the microseconds.  We have determined we could actually use DATETIME2(0) for all our purposes and shrink our indexes by quite a bit.
 
---------------------------------------------------------------------------
 |Id|dateOne|dateTwo|dateThree|dateFour|dateFive|timeOne|timeTwo|
+|--|-------|-------|---------|--------|--------|-------|-------|
 |1|2015-04-06 07:16:21.090|2015-04-06 07:16:21.0911135|2015-04-06 07:16:21|2015-04-06 07:16:21.1000000|2015-04-06|07:16:21.0911135|07:16:21|
---------------------------------------------------------------------------
 
 Here is a table showing how much space is taken by each date type available in SQLServer 2012+.  A **DATETIME2(0)** data type is 2 bytes smaller than a **DATETIME** data type.  While this may not seem like a lot, in an index that is applied to a table with a million records, it can make a large difference.
 
---------------------------------------------------------------------------
 |DataType|Minimum Value|Maximum Value|Storage Space|
+|--------|-------------|-------------|-------------|
 |Datetime|1753-01-01 00:00:00.000|9999-12-31 23:59:59.997|8 bytes|
 |Smalldatetime|1900-01-01 00:00|2079-06-06 23:59|
 |Date|0001-01-01|9999-12-31|3 bytes|
 |Time|00:00:00.0000000|23:59:59.9999999|
 |Datetime2|0001-01-01 00:00:00.0000000|9999-12-31 23:59:59.9999999|Precision <=2 = 6 bytes, precision <=4 = 7 bytes precision <=7 = 8 bytes|
--------------------------------------------------------------------------
 
 If you want the code samples in full, they are on [pastebin.com](http://pastebin.com/HFnRzKki).
 
