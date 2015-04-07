@@ -1,13 +1,28 @@
 table {
-    border-collapse: collapse;
-     width: 100%;
-     box-shadow: 10px 10px 5px #888888;
-     border-radius: 25px;
+	border-collapse: collapse;
+	width: 100%;
+	box-shadow: 10px 10px 5px #888888;
 }
 
 table, th, td {
-    border: 1px solid black;
-    padding: 5px;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+th:first-child {
+	border-radius: 5px;
+}
+
+th:last-child {
+	border-radius: 5px;
+}
+
+tr:last-child td:first-child{
+	border-radius: 5px;
+}
+
+tr:last-child td:last-child{
+	border-radius: 5px;
 }
 
 tr:nth-child(even) {
