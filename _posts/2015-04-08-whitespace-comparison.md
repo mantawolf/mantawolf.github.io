@@ -14,9 +14,18 @@ So what exactly does that all mean?  It means that a string is padded with white
 {%highlight sql %}
 
 SELECT
-    CASE WHEN '' = '     ' THEN 'EQUAL' ELSE 'NEQ' END AS 'SpaceCompare'
-  , CASE WHEN 'abc' = 'abc     ' THEN 'EQUAL' ELSE 'NEQ' END AS 'TrailingSpaces'
-  , CASE WHEN 'abs' = '     abc' THEN 'EQUAL' ELSE 'NEQ' END AS 'LeadingSpaces'
+    CASE WHEN '' = '     ' 
+      THEN 'EQUAL' 
+      ELSE 'NEQ' 
+      END AS 'SpaceCompare'
+  , CASE WHEN 'abc' = 'abc     ' 
+      THEN 'EQUAL' 
+      ELSE 'NEQ' 
+      END AS 'TrailingSpaces'
+  , CASE WHEN 'abs' = '     abc' 
+      THEN 'EQUAL' 
+      ELSE 'NEQ' 
+      END AS 'LeadingSpaces'
 
 {% endhighlight %}
 
