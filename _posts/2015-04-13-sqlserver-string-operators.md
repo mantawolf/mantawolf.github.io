@@ -87,9 +87,9 @@ SELECT @t1;
 
 {% endhighlight %}
 
-This will display **Hello World**.  In the event you don't know it, you can use *PRINT* instead of *SELECT* to print to the Messages console instead of the results window.
+This will display *Hello World*.  In the event you don't know it, you can use **PRINT** instead of **SELECT** to print to the Messages console instead of the results window.
 
-Next up are wildcard operators.  The *%* is used for wildcard matching in SQLServer.  There are a few ways you can use this.  Starts with, ends with, and contains.
+Next up are wildcard operators.  The **%** is used for wildcard matching in SQLServer.  There are a few ways you can use this.  Starts with, ends with, and contains.
 
 {%highlight sql %}
 
