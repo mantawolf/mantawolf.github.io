@@ -23,6 +23,7 @@ layout: default
         <span>Message :</span>
         <textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
     </label> 
+    <input type='hidden' name='redirect_to' value='{{ site.baseurl }}/contact/?formSubmit' />
     <label>
         <span>&nbsp;</span> 
         <input type="submit" class="button" value="Send" /> 
