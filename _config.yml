@@ -45,7 +45,7 @@ url: http://blog.eadshome.net
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
-paginate: 10
+paginate: 5
 
 #
 # !! You don't need to change any of the configuration flags below !!
