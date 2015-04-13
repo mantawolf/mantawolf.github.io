@@ -81,7 +81,7 @@ You will notice that I included columns for **SOUNDEX** and **DIFFERENCE**.  Bot
 + If two or more letters with the same number are adjacent in the original name (before step 1), only retain the first letter; also two letters with the same number separated by 'h' or 'w' are coded as a single number, whereas such letters separated by a vowel are coded twice. This rule also applies to the first letter 
 + Iterate the previous step until you have one letter and three numbers. If you have too few letters in your word that you can't assign three numbers, append with zeros until there are three numbers. If you have more than 3 letters, just retain the first 3 numbers.
 
-I will refer to a (wiki article)[http://en.wikipedia.org/wiki/Soundex] if you want the history and variants of **SOUNDEX**. 
+I will refer to a [wiki article](http://en.wikipedia.org/wiki/Soundex) if you want the history and variants of **SOUNDEX**. 
 
 The second function, **DIFFERENCE**, is a count of how many of the **SOUNDEX** values match each other.  It takes 2 strings and returns a value 0-4.
 
