@@ -7,7 +7,7 @@ keywords: "sqlserver,string,operators,regex,concat,concatenation,wildcard,wildca
 
 The last part of this series on working with strings in SQLServer will focus on operators that you can use.  As a developer working in SQLServer, we understand that we do not have access to powerful regex methods.  We instead get access to a few string operators.
 
-+ + (String concatenation)
++ \+ (String concatenation)
 + += (String concatenation)
 + % (Wilcard)
 + [] (Characters to match)
