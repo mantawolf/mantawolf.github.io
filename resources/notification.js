@@ -5,7 +5,7 @@ function postContactForm(){
 
     url += "&name=" + document.getElementById("name").value;
     url += "&email=" + document.getElementById("email").value;
-    url += "&title=" + document.getElementById("title").value;
+    url += "&subject=" + document.getElementById("subject").value;
     url += "&message=" + document.getElementById("message").value;
 
     xmlhttp.onreadystatechange = function() {
