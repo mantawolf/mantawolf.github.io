@@ -24,6 +24,9 @@ function postContactForm(){
 
 function toggleNotification(type, msg) {
     var notificationDiv = document.getElementById("notification");
+	var hideNotification = function(){
+		document.getElementById('notification').style.display = 'none';
+	};
 
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
@@ -33,4 +36,6 @@ function toggleNotification(type, msg) {
     notificationDiv.innerHTML = msg;
     notificationDiv.className = "alert-box " + type;
     notificationDiv.style.display = "block";
+
+	window.setInterval(hideNotification, '3500');
 }
