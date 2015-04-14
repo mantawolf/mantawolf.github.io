@@ -25,7 +25,12 @@ function postContactForm(){
 function toggleNotification(type, msg) {
     var notificationDiv = document.getElementById("notification");
 
-    notificationDiv.style.display = "block";
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
+
     notificationDiv.innerHTML = msg;
     notificationDiv.className = "alert-box " + type;
+    notificationDiv.style.display = "block";
 }
