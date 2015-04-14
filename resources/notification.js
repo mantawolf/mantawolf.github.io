@@ -11,8 +11,6 @@ function postContactForm(){
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             toggleNotification('success', 'Contact Form Successfully Posted');
-        } else {
-            toggleNotification('error', 'Contact Form Failed To Post');
         }
     }
 
