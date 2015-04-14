@@ -3,7 +3,7 @@ layout: default
 ---
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/resources/contact.css" />
 <div class="posts">
-<form action="https://getsimpleform.com/messages?form_api_token=2cf6bd15735e916486a2660d1143d342" method="post" class="basic-grey">
+<form id="contactForm" name="contactForm" action="" method="post" class="basic-grey">
     <h1>Contact Form 
         <span>Please fill out all of the fields.</span>
     </h1>
@@ -17,7 +17,7 @@ layout: default
     </label>    
     <label>
         <span>Subject :</span>
-        <input id="subject" type="text" name="subject" placeholder="Subject" />
+        <input id="title" type="text" name="title" placeholder="Subject" />
     </label>    
     <label>
         <span>Message :</span>
@@ -26,7 +26,7 @@ layout: default
     <input type='hidden' name='redirect_to' value='http://blog.eadshome.net/contact?formSubmit' />
     <label>
         <span>&nbsp;</span> 
-        <input type="submit" class="button" value="Send" /> 
+        <input type="button" class="button" value="Send" id="send" name="send" onsubmit="postContactForm();" /> 
     </label>    
 </form>
 </div>
