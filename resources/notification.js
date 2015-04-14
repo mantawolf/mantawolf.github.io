@@ -5,7 +5,7 @@ function postContactForm(){
 
     url += "&name=" + document.getElementById("name").value;
     url += "&email=" + document.getElementById("email").value;
-    url += "&subject=" + document.getElementById("subject").value;
+    url += "&subject=" + document.getElementById("title").value;
     url += "&message=" + document.getElementById("message").value;
 
     xmlhttp.onreadystatechange = function() {
@@ -27,7 +27,7 @@ function toggleNotification(type, msg) {
 
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
-    document.getElementById("subject").value = "";
+    document.getElementById("title").value = "";
     document.getElementById("message").value = "";
 
     notificationDiv.innerHTML = msg;
