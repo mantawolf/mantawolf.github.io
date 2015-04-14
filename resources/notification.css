@@ -1,32 +1,50 @@
-	.alert-box {
-		color:#555;
-		border-radius:10px;
-		font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
-		padding:10px 36px;
-		margin:10px;
-	}
+.alert-box {
+	color:#555;
+	border-radius:10px;
+	font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
+	padding:10px 36px;
+	margin:10px;
 
-	.alert-box span {
-		font-weight:bold;
-		text-transform:uppercase;
-	}
+	animation:signup-response 2.5s 1;
+	-webkit-animation:signup-response 1.5s 1;
+	animation-fill-mode: forwards;
 
-	.error {
-		background:#ffecec url('/images/notification/error.png') no-repeat 10px 50%;
-		border:1px solid #f5aca6;
-	}
+	animation-delay:2s;
+	-webkit-animation-delay:2s; /* Safari and Chrome */
+	-webkit-animation-fill-mode: forwards;
+}
 
-	.success {
-		background:#e9ffd9 url('/images/notification/success.png') no-repeat 10px 50%;
-		border:1px solid #a6ca8a;
-	}
+.alert-box span {
+	font-weight:bold;
+	text-transform:uppercase;
+}
 
-	.warning {
-		background:#fff8c4 url('/images/notification/warning.png') no-repeat 10px 50%;
-		border:1px solid #f2c779;
-	}
+.error {
+	background:#ffecec url('/images/notification/error.png') no-repeat 10px 50%;
+	border:1px solid #f5aca6;
+}
 
-	.notice {
-		background:#e3f7fc url('/images/notification/notice.png') no-repeat 10px 50%;
-		border:1px solid #8ed9f6;
-	}
+.success {
+	background:#e9ffd9 url('/images/notification/success.png') no-repeat 10px 50%;
+	border:1px solid #a6ca8a;
+}
+
+.warning {
+	background:#fff8c4 url('/images/notification/warning.png') no-repeat 10px 50%;
+	border:1px solid #f2c779;
+}
+
+.notice {
+	background:#e3f7fc url('/images/notification/notice.png') no-repeat 10px 50%;
+	border:1px solid #8ed9f6;
+}
+
+@keyframes signup-response{
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+
+@-webkit-keyframes signup-response{
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
