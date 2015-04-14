@@ -3,10 +3,10 @@ function postContactForm(){
     var url = "https://getsimpleform.com/messages/ajax?form_api_token=2cf6bd15735e916486a2660d1143d342";
     var data = new FormData();
 
-    data.append("name", document.getElementById("name").value);
-    data.append("email", document.getElementById("email").value);
-    data.append("title", document.getElementById("title").value);
-    data.append("message", document.getElementById("message").value);
+    url += "&name=" + document.getElementById("name").value;
+    url += "&email=" + document.getElementById("email").value;
+    url += "&title=" + document.getElementById("title").value;
+    url += "&message=" + document.getElementById("message").value;
 
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
