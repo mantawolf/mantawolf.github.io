@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/resources/contact.css" />
+<div class="posts">
+<form id="contactForm" name="wrfaSignUpForm" action="" method="post" class="basic-grey">
+    <h1>
+        WRFA Sign-up
+        <span>Please fill out all of the fields.</span>
+    </h1>
+    <label>
+        <span>Name</span>
+        <input id="name" type="text" name="name" placeholder="First Last" />
+    </label>
+    <label>
+        <span>Email</span>
+        <input id="email" type="email" name="email" placeholder="Valid Email Address" />
+    </label>    
+    <label>
+        <span>Birthdate</span>
+        <input id="birthdate" type="date" name="birthdate" placeholder="Birth date" />
+    </label>    
+    <label>
+        <span>Address</span>
+        <input id="address" type="text" name="address" placeholder="Address" />
+    </label>    
+    <label>
+        <span>Phone </span>
+        <input id="phone" type="tel" name="phone" placeholder="Phoen number" />
+    </label> 
+    <label>
+        <span>&nbsp;</span> 
+        <input type="button" class="button" value="Send" id="send" name="send" onclick="postContactForm();" /> 
+    </label>    
+</form>
+</div>
