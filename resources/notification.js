@@ -25,12 +25,14 @@ function postSignupForm(){
     var url = "https://getsimpleform.com/messages/ajax?form_api_token=2cf6bd15735e916486a2660d1143d342";
     var data = new FormData();
 
-    url += "&name=" + document.getElementById("name").value;
-    url += "&email=" + document.getElementById("email").value;
-    url += "&subject=" + document.getElementById("birthdate").value;
-    url += "&message=" + document.getElementById("birthdate").value;
-    url += "&message=" + document.getElementById("address").value;
-    url += "&message=" + document.getElementById("phone").value;
+    url += "&title=WRFA Signup";
+    var msg = "name = " + document.getElementById("name").value + "<br />";
+    msg += "email = " + document.getElementById("email").value + "<br />";
+    msg += "birthdate = " + document.getElementById("birthdate").value + "<br />";
+    msg += "address = " + document.getElementById("address").value + "<br />";
+    msg += "phone = " + document.getElementById("phone").value + "<br />";
+
+    url += "&message=" + msg;
 
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
