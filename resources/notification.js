@@ -10,7 +10,7 @@ function postContactForm(){
 
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            toggleNotification('success', 'Contact Form Successfully Posted');
+            toggleNotification('success', 'Contact Form Successfully Posted', 'contact');
         }
     }
 
@@ -36,7 +36,7 @@ function postSignupForm(){
 
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            toggleNotification('success', 'Signup successful.  You should receive information shortly.');
+            toggleNotification('success', 'Signup successful.  You should receive information shortly.', 'signup');
         }
     }
 
@@ -46,17 +46,25 @@ function postSignupForm(){
     console.log(xmlhttp);
 }
 
-function toggleNotification(type, msg) {
+function toggleNotification(type, msg, from) {
     var notificationDiv = document.getElementById("notification");
 	var hideNotification = function(){
 		document.getElementById('notification').style.display = 'none';
 	};
 
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("title").value = "";
-    document.getElementById("message").value = "";
+    if(from == "contact"){
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("title").value = "";
+        document.getElementById("message").value = "";
+    } else {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("birthdate").value = "";
+        document.getElementById("address").value = "";
+        document.getElementById("phone").value = "";
 
+    }
     notificationDiv.innerHTML = msg;
     notificationDiv.className = "alert-box " + type;
     notificationDiv.style.display = "block";
