@@ -34,7 +34,7 @@
     margin-top: 10px;
     color: #888;
 }
-.basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+.basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select, .basic-grey input[type="tel"], .basic-grey input[type="date"] {
     border: 1px solid #DADADA;
     color: #888;
     height: 30px;
