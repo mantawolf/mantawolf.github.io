@@ -52,6 +52,8 @@ function toggleNotification(type, msg, from) {
 		document.getElementById('notification').style.display = 'none';
 	};
 
+    window.scrollTo(0, 0);
+
     if(from == "contact"){
         document.getElementById("name").value = "";
         document.getElementById("email").value = "";
