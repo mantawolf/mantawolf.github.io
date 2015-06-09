@@ -1,6 +1,6 @@
 ---
 layout: post
-title: More Wasted Money for the CFC
+title: More Wasted Money for the CDC
 desc: "Sen Markey pushing to give more money to the CDC to study the gun violence epidemic"
 keywords: "markey,senator,gun violence,cdc,wasted money"
 images:
