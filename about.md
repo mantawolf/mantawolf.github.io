@@ -13,6 +13,8 @@ Graduated high school in Irving TX back in 1993, grew up most of my life there. 
 
 From there, it was marriage and kids.  Went to work eventually at GTE, which would later become Verizon.  Then finally Clearview, which would become API Healthcare, then swallowed up by GE.  That gets us to today.
 
+<iframe src='//cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=177xZ2PqXRFzsJyQnXOtdmeWxN5ROcuo7FcuCMcRPm2Q&font=Default&lang=en&height=300' width='100%' height='300' frameborder='0'></iframe>
+
 ### Interests
 
 
