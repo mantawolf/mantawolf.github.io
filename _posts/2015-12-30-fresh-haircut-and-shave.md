@@ -1,6 +1,7 @@
 ---
 layout: post
 title: fresh haircut and shave
+keywords: "we bare bears,shave,haircut,veteran,Specs"
 ---
 Fresh haircut and shave yesterday got me carded at Specs liquor store.  That hasn't happened since I moved here last year.  On the other hand I found out Specs has a veterans discount...  Score!
 
