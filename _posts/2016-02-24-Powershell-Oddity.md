@@ -7,7 +7,7 @@ keywords: "powershell,finally,not executing,console"
 
 As a developer, I run most of my local development environment from a console and I use Powershell scripts to start up that environment. Not so recently I ran into an issue with how my scripts were setup and it took forever to figure out why something was happening. Well, maybe not why but sorta why.
 
-Jumping right in, if you have this script below and execute it with the *nofinal* flag, then cntl+c to terminate the script, the finally block will not execute. If you start it without the nofinal* flag and terminate with cntl+c, the finally block will execute.
+Jumping right in, if you have this script below and execute it with the *nofinal* flag, then cntl+c to terminate the script, the finally block will not execute. If you start it without the *nofinal* flag and terminate with cntl+c, the finally block will execute.
 
 {%highlight powershell %}
 param([switch]$nofinal)
@@ -19,13 +19,13 @@ Try{
     $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyUp")
 }
 Catch{
-    Write-Output $_.Exception.Message -foregroundcolor "Red" -backgroundcolor "White"
+    Write-Output $_.Exception.Message
 }
 Finally{
     if($nofinal){
         Write-Output "Finally executed using write output"
     }
-    Write-Host "Finally executed using write host." -foregroundcolor "Blue" -backgroundcolor "White"
+    Write-Host "Finally executed using write host."
 }
 {% endhighlight %}
 
