@@ -9,7 +9,7 @@ My latest adventures with SQLServer have been with being able to create some str
 
 Let us start with building some sample data...
 
-{%highlight sql %}
+```sql
 
 -- create some users
 CREATE TABLE ##users (Id INT, firstName VARCHAR(50), lastName VARCHAR(50), residentState VARCHAR(2), userName VARCHAR(25));
@@ -45,11 +45,11 @@ VALUES
 	, (6, 5, 'work', 'arnold@test.com')
 	, (7, 5, 'disposable', 'kinston@test.com')
 
-{% endhighlight %}
+```
 
 The most basic example is using *FOR XML RAW* which will output every row in your query as an XML record with attributes for every column in the query.  The default name of the element is **row** but below we are specifying that we want the record to be named **user**.
 
-{%highlight sql %}
+```sql
 
 -- raw example where everything in the row goes in as attributes with a default name of ROW, you can specify the name though
 SELECT
@@ -61,9 +61,9 @@ SELECT
 FROM ##users u
 FOR XML RAW('user')
 
-{% endhighlight %}
+```
 
-{%highlight xml %}
+```xml
 
 <user Id="1" firstName="Jack" lastName="Smith" residentState="TX" userName="jjSmith" />
 <user Id="2" firstName="Elvis" lastName="Presley" residentState="LA" userName="the_king" />
@@ -71,11 +71,11 @@ FOR XML RAW('user')
 <user Id="4" firstName="Bruce" lastName="Willis" residentState="NC" userName="actionMan" />
 <user Id="5" firstName="Arnold" lastName="Kinston" residentState="ND" userName="whos_this" />
 
-{% endhighlight %}
+```
 
 The same example except this time we are defining that we want a root element of **users**.
 
-{%highlight sql %}
+```sql
 
 -- you can also give it a root element
 SELECT
@@ -87,9 +87,8 @@ SELECT
 FROM ##users u
 FOR XML RAW, ROOT('users')
 
-{% endhighlight %}
-
-{%highlight xml %}
+```
+```xml
 
 <users>
   <row Id="1" firstName="Jack" lastName="Smith" residentState="TX" userName="jjSmith" />
@@ -99,11 +98,11 @@ FOR XML RAW, ROOT('users')
   <row Id="5" firstName="Arnold" lastName="Kinston" residentState="ND" userName="whos_this" />
 </users>
 
-{% endhighlight %}
+```
 
 To get a little more complicated, we are switching from *FOR XML RAW* to *FOR XML PATH* instead.  The difference is that we can specify attributes and nested elements now.  If we alias our columns using XPATH style names, we can define attributes.  Items without an alias will be output as a new element nested under the current element.  Important thing to note is that anything that is going to be an attribute has to come first before elements.
 
-{%highlight sql %}
+```sql
 
 -- basic example with attributes, '@varchar' alias declaration with @ makes the column an attribute, all attributes declarations must come before data elements
 SELECT
@@ -115,9 +114,9 @@ SELECT
 FROM ##users u
 FOR XML PATH('User'), TYPE, ROOT('Users')
 
-{% endhighlight %}
+```
 
-{%highlight xml %}
+```xml
 
 <Users>
   <User userId="1" firstName="Jack" lastName="Smith">
@@ -142,11 +141,11 @@ FOR XML PATH('User'), TYPE, ROOT('Users')
   </User>
 </Users>
 
-{% endhighlight %}
+```
 
 Lastly a slightly more complicated example involving some subqueries that return multiple records from a 1-many relationship to other tables.
 
-{%highlight sql %}
+```sql
 
 -- slightly complex nested XML data
 SELECT 
@@ -170,9 +169,9 @@ SELECT
 FROM ##users u
 FOR XML PATH('User'), TYPE, ROOT('Users')
 
-{% endhighlight %}
+```
 
-{%highlight xml %}
+```xml
 
 <Users>
   <User userId="1" firstName="Jack" lastName="Smith">
@@ -219,18 +218,18 @@ FOR XML PATH('User'), TYPE, ROOT('Users')
   </User>
 </Users>
 
-{% endhighlight %}
+```
 
 And lastly, cleanup our temp tables!
 
-{%highlight sql %}
+```sql
 
 -- clean up
 DROP TABLE ##users
 DROP TABLE ##email
 DROP TABLE ##phone
 
-{% endhighlight %}
+```
 
 If you want the code samples in full, they are on [pastebin.com](http://pastebin.com/uKHMBkXH).
 
