@@ -9,7 +9,7 @@ There are a few methods of comparing strings in SQLServer.  To start with, you c
 
 To be honest, the best thing to do is run the example provided and see how it behaves in whatever character set and collation you are using.  I use the default collation *SQL_Latin1_General_CP1_CI_AS* and the results table I show reflects that.
 
-{%highlight sql %}
+```sql
 
 CREATE TABLE ##table1 (
 	  Id INT
@@ -50,7 +50,7 @@ SELECT
 	, DIFFERENCE(text1, text2) AS difference1and2
 FROM ##table1
 
-{% endhighlight %}
+```
 
 |Text1|Equality|Text2|Soundex1|Soundex2|Difference|
 |-----|--------|-----|--------|--------|----------|
