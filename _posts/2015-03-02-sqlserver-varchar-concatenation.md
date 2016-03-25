@@ -11,7 +11,7 @@ The *MAX* piece however is interesting.  For all purposes, this causes the *VARC
 
 Something important to note when you concatenate strings in SQLServer, the first value in your concatenation is used to determine the datatype of the resulting string.  If you need a *MAX* length *VARCHAR* as the resulting because you resulting string is greater than 8,000 characters, you can either *CAST* the first string in your concatenation operation to a *VARCHAR(MAX)* or use your declared variable as the first value to concatenate together.  Do make sure your variable has been initialized to something or else your resulting string will be *NULL*.
 
-{%highlight sql %}
+```sql
 
 -- results in a 16,000 character string because the first string is CAST to a VARCHAR(MAX)
 DECLARE @concat VARCHAR(MAX);
@@ -33,7 +33,7 @@ DECLARE @concat4 VARCHAR(MAX) = '';
 SET @concat4 = @concat4 + REPLICATE('-', 8000) + REPLICATE('-', 8000);
 SELECT @concat4;
 
-{% endhighlight %}
+```
 
 Keep in mind that the above examples get muddy when you start mixing in *NVARCHAR* values instead.  *NVARCHAR* has a numeric limit of 4,000 instead of 8,000.
 
