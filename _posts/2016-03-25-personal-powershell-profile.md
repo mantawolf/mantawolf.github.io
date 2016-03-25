@@ -56,9 +56,9 @@ function writeXmlToScreen ($xml){
 }
 
 # executes Sql
-# executeSQL($params = @{database = "tssmasterlog"; sql = "SELECT * FROM customers WHERE folderName = 'mainline'"; dbUser = "sa"; dbPass = "password"; dbHost = "localhost"})
-# executeSQL($params = @{database = "tssmasterlog"; sql = "SELECT * FROM customers WHERE folderName = 'mainline'"; dbUser = "sa"; dbPass = "password"})
-# executeSQL($params = @{database = "tssmasterlog"; sql = "SELECT * FROM customers WHERE folderName = 'mainline'"})
+# executeSQL($params = @{database = "localDB"; sql = "SELECT * FROM customers WHERE id = 1"; dbUser = "sa"; dbPass = "password"; dbHost = "localhost"})
+# executeSQL($params = @{database = "localDB"; sql = "SELECT * FROM customers WHERE id = 1"; dbUser = "sa"; dbPass = "password"})
+# executeSQL($params = @{database = "localDB"; sql = "SELECT * FROM customers WHERE id = 1"})
 function executeSQL($params){
 	$dbUser = (?: {[bool]($params.dbUser -ne $null)} {$params.dbUser} {"sa"})
 	$dbPass = (?: {[bool]($params.dbPass -ne $null)} {$params.dbPass} {"password"})
