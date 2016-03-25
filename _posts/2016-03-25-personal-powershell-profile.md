@@ -6,8 +6,8 @@ keywords: "powershell,profile"
 Just thought I would share my Powershell profile I use.  Anyone have anything they would add?
 
 {%highlight powershell %}
-# home path used by various commands within this and local dev scripts
-$homePath = "c:\agency\code\"
+# home path used by various commands within this
+$homePath = "c:\code\"
 Set-Location $homePath
 
 # up one directory
