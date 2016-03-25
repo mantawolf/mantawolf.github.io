@@ -11,7 +11,7 @@ I would like to take this opportunity to point out a slight problem with the [SQ
 
 So what exactly does that all mean?  It means that a string is padded with whitespace at the end in order to facilitate comparison of strings.  So if your existing string ends with whitespace, it will not have the expected outcome during a comparison.  Let's have an example.
 
-{%highlight sql %}
+```sql
 
 SELECT
     CASE WHEN '' = '     ' 
@@ -27,7 +27,7 @@ SELECT
       ELSE 'NEQ' 
       END AS 'LeadingSpaces'
 
-{% endhighlight %}
+```
 
 I would **expect** that none of the above string comparisons would be equal, but look at the result set below.
 
