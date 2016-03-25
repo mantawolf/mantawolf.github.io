@@ -9,7 +9,7 @@ As a developer, I run most of my local development environment from a console an
 
 Jumping right in, if you have this script below and execute it with the *nofinal* flag, then cntl+c to terminate the script, the finally block will not execute. If you start it without the *nofinal* flag and terminate with cntl+c, the finally block will execute.
 
-{%highlight powershell %}
+```powershell
 param([switch]$nofinal)
 
 Try{
@@ -27,7 +27,7 @@ Finally{
     }
     Write-Host "Finally executed using write host."
 }
-{% endhighlight %}
+```
 
 The only difference is the use of the **Write-Output** when you include the *nofinal* flag to the start-up of the script.  Now I know the difference between **Write-Output** and **Write-Host** is that the first one writes to the pipeline so it can be piped into another command and the second one writes to the console itself.  I think that has to have something to do with this but I do not know the specifics.
 
