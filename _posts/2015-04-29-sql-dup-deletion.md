@@ -9,7 +9,7 @@ As a "high level DBA type", I do get to see strange things occasionally.  On a p
 
 The first type of duplicated record we will work on is one where the primary key is duplicated, whether by import or you are trying to create a unique key against existing data.
 
-{%highlight sql %}
+```sql
 
 -- Lets create some test data
 CREATE TABLE #table1 (
@@ -33,11 +33,11 @@ FROM #table1
 GROUP BY text1
 HAVING COUNT(*) > 1
 
-{% endhighlight %}
+```
 
 When executing this, you can see that 2 of our records have the same text.  If you delete by ID, you will lose both records.  Sadly, this is an occasion where the recommended practice is to set the **ROWCOUNT** to 1 and delete by ID.  You will find that you can not use an **ORDER BY** on a **DELETE** statement either.
 
-{%highlight sql %}
+```sql
 
 SET ROWCOUNT 1
 DELETE FROM #table1 WHERE Id = 1 
@@ -46,7 +46,7 @@ SET ROWCOUNT 0
 
 SELECT * FROM #table1
 
-{% endhighlight %}
+```
 
 The bad part of this is that I can not reliably control which record gets deleted based on the data.
 
@@ -57,7 +57,7 @@ Id|text1|dtc
 
 The more likely scenario is you have imported data and you already have a column with an auto-increment integer for the primary key.  You have duplicate records but at least you have a unique identifier.
 
-{%highlight sql %}
+```sql
 
 CREATE TABLE #table2 (
 	  Id INT
@@ -82,11 +82,11 @@ HAVING COUNT(*) > 1
 
 SELECT * FROM #table2
 
-{% endhighlight %}
+```
 
 Executing that shows the data scenario we are dealing with now.  In this case we want to keep the records that were created last.
 
-{%highlight sql %}
+```sql
 
 DELETE FROM #table2
 WHERE Id IN(
@@ -98,7 +98,7 @@ WHERE Id IN(
 
 SELECT * FROM #table2
 
-{% endhighlight %}
+```
 
 The above shows we can select the IDs of the records in a subquery that have the lower create date and delete those.  This gives us that small amount of control over which duplicate record we want to delete.
 
@@ -111,7 +111,7 @@ And if we decide we want the first record created instead of the last, we can sw
 
 But wait, our data is even more messed up than normal!  We have records with the same primary key but different data and we want to keep it ALL!!!
 
-{%highlight sql %}
+```sql
 
 CREATE TABLE #table3 (
 	  Id INT
@@ -131,11 +131,11 @@ VALUES
 
 SELECT * FROM #table3
 
-{% endhighlight %}
+```
 
 Oh god, it's horrible!  Fix it please!  And we can.  We will dump the distinct records into a holding table of sorts, **TRUNCATE** the messed up table, and reinsert the records with new, distinct IDs.
 
-{%highlight sql %}
+```sql
 
 SELECT DISTINCT text1, dtc
 INTO #holdingTable
@@ -149,7 +149,7 @@ FROM #holdingTable
 
 SELECT * FROM #table3
 
-{% endhighlight %}
+```
 
 Id|text1  |tc
 --|-------|--
@@ -160,7 +160,7 @@ Id|text1  |tc
 
 How much more messed up can we let our data get?
 
-{%highlight sql %}
+```sql
 
 CREATE TABLE #table4(
       Id INT
@@ -186,11 +186,11 @@ VALUES
 
 SELECT * FROM #table4;
 
-{% endhighlight %}
+```
 
 Don't ask questions you don't want to know the answer too.  Now we have data that we want to consolidate to fill in the **NULL** values.
 
-{% highlight sql %}
+```sql
 
 WITH cte AS (
 	SELECT
@@ -220,7 +220,7 @@ WHERE Rn = 1
 SELECT * 
 FROM #noDups 
 
-{% endhighlight %}
+```
 
 Id|firstName|lastName|emailUpdated        |phoneUpdated|dateOfBirthUpdated|ratingUpdated|Rn
 --|---------|--------|--------------------|------------|------------------|-------------|--
