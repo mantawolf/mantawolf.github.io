@@ -9,7 +9,7 @@ As we have established already, I work in development.  I happen to be pretty go
 
 So our existing schema:
 
-{%highlight sql %}
+```sql
 -- contains roughly 9 millions records
 CREATE TABLE customerData
 	recordId INT NOT NULL
@@ -22,11 +22,11 @@ CREATE TABLE customerNotes
 	, noteText VARCHAR(250) NULL
 	, dateTimeCreated DATETIME NULL
 
-{% endhighlight %}
+```
 
 So the proposed solution.  We create a table as such:
 
-{% highlight sql %} 
+```sql
 
 CREATE TABLE activityDates
 	recordId INT NOT NULL
@@ -34,7 +34,7 @@ CREATE TABLE activityDates
 	, dateTwo DATETIME NULL
 	, dateThree DATETIME NULL
 
-{% endhighlight %}
+```
 
 We then insert every record id from the table we want to store this data against.  Any action that would impact these dates, in this case notes, we update this table.  Then when we do reporting, instead of writing CTEs to get MIN() or MAX() dates from table1, we join to table activityDates istead.
 
