@@ -13,7 +13,7 @@ Today, my co-worker tells me he thinks he found a problem running a report.  It 
 
 Go ahead, try it.  The branch below that runs for @fail = 1 will generate an error.  If you change @fail to 0, it works.  The working condition is just ugly.
 
-{%highlight sql %}
+```sql
 
 DECLARE @fail BIT = 1;
 
@@ -61,6 +61,6 @@ ELSE
 DROP TABLE ##table1
 DROP TABLE ##table2
 
-{% endhighlight %}
+```
 
 ### [My first MS bug report](https://connect.microsoft.com/SQLServer/feedback/details/1221207)
