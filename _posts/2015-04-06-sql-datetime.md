@@ -9,7 +9,7 @@ This weeks tidbit will be rehashing some things I learned about SQLServer dates.
 
 Let us start with building some sample data...
 
-{%highlight sql %}
+```sql
 
 CREATE TABLE ##table1 (
 	Id INT
@@ -42,17 +42,17 @@ VALUES (
 	, sysdatetime() -- TIME(0) - 14:06:46
 )
 
-{% endhighlight %}
+```
 
 Pretty simple, we can just select and view the result set.
 
-{%highlight sql %}
+```sql
 
 SELECT * FROM ##table1
 
 DROP TABLE ##table1
 
-{% endhighlight %}
+```
 
 As can be seen by running the example, **DATETIME2** is a more accurate data type.  It records down to the nanosecond.  For most purposes of a web app, I dont even need the microseconds.  We have determined we could actually use DATETIME2(0) for all our purposes and shrink our indexes by quite a bit.
 
