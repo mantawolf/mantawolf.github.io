@@ -5,7 +5,7 @@ keywords: "powershell,profile"
 ---
 Just thought I would share my Powershell profile I use.  Anyone have anything they would add?
 
-{%highlight powershell %}
+```powershell
 # home path used by various commands within this
 $homePath = "c:\code\"
 Set-Location $homePath
@@ -120,4 +120,4 @@ function explore {
 }
 
 Set-Alias gs Get-Service
-{% endhighlight %}
+```
