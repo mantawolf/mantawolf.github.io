@@ -23,7 +23,7 @@ Let us start with some sample CAV data at [Pastebin](http://pastebin.com/fYHiSER
 
 Then let us create some MySQL tables to import to...
 
-{% highlight sql %}
+```sql
 
 CREATE TABLE `cardetail` (
   `ID` varchar(10) NOT NULL,
@@ -52,21 +52,21 @@ CREATE TABLE `caroption` (
   UNIQUE KEY `OptionId_UNIQUE` (`OptionId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4056 DEFAULT CHARSET=utf8;
 
-{% endhighlight %}
+```
 
 Now for the fun stuff, how do we get that CSV data into MySQL?  First we need to import modules for csv, MySQLdb, and datetime.  
 
-{% highlight python %}
+```python
 
 import csv
 import MySQLdb
 import datetime
 
-{% endhighlight %}
+```
 
 Then we need to establish the connection to MySQL and create a cursor.  We will also create a variable to use to ignore the first row which in our case is a header.
 
-{% highlight python %}
+```python
 
 mydb = MySQLdb.connect(
     host="localhost",
@@ -78,21 +78,21 @@ mydb = MySQLdb.connect(
 cursor = mydb.cursor()
 rowOne = 0
 
-{% endhighlight %}
+```
 
 Now we will read in the CSV file and start a loop to go over the dataset.
 
-{% highlight python %}
+```python
 
 csv_data = csv.reader(file("autoinventory.csv"))
 for row in csv_data:
   if rowOne == 1:
 
-{% endhighlight %}
+```
 
 We will build a SQL string to insert our data.
 
-{% highlight python %}
+```python
 
 carDataSql = (
   "INSERT INTO CarDetail ( "
@@ -107,11 +107,11 @@ carDataSql = (
   "VALUES( %s, %s, %s, %s, %s, %s, %s )"
 )
 
-{% endhighlight %}
+```
 
 And to setup our array of data to insert into those placeholders.  Some things to note below are that we need to cast our integers, floats, and dates correctly.  We are using built in methods to do all of this.  The method strptime() creates a date/time object from a string and a format specifier.  Also note that row is an array and arrays in Python are zero index.
 
-{% highlight python %}
+```python
 
 carData = (
     row[0]
@@ -123,28 +123,28 @@ carData = (
   , datetime.datetime.strptime(row[6], "%b %d %Y %I:%M%p").date()
 )
 
-{% endhighlight %}
+  ```
 
 For our base piece of data, we will now execute the cursor to insert this record.
 
-{% highlight python %}
+```python
 
 cursor.execute( carDataSql, carData )
 
-{% endhighlight %}
+```
 
 Next we will pull out the options and images into an array.  We use the split() method on the row and split on the comma.
 
-{% highlight python %}
+```python
 
 carOptions = row[7].split(",")
 carImages = row[8].split(",")
 
-{% endhighlight %}
+```
 
 Lastly we will loop over each array and insert records into the options and images tables.  You can note that our data arrays includes the stock number of the car so that we can match the record back to the CarDetail table.
 
-{% highlight python %}
+```python
 
 for option in carOptions:
   optionSql = (
@@ -164,16 +164,16 @@ for image in carImages:
 imageData = ( row[0], image )
 cursor.execute( imageSql, imageData )
 
-{% endhighlight %}
+```
 
 For each record loop, we will set the variable rowOne.  We will also commit our record and close the cursor we created.
 
-{% highlight python %}
+```python
 
 rowOne = 1
 mydb.commit()
 cursor.close()
 
-{% endhighlight %}
+```
 
 The complete source code with correct whitespace is at [Pastebin](http://pastebin.com/MBcSSiKA)
