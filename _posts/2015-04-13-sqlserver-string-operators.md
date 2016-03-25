@@ -16,7 +16,7 @@ The last part of this series on working with strings in SQLServer will focus on 
 
 Following how I normally write, we are going to start with setting up some temporary tables with data so we can see each operator in action.
 
-{%highlight sql %}
+```sql
 
 CREATE TABLE ##table1 (
 	  Id INT
@@ -52,11 +52,11 @@ VALUES
 	, (6, 'cac')
 	, (7, 'daz')
 
-{% endhighlight %}
+```
 
 The first operators we will discuss are the concatenation operators.  Concatentation is simply appending a string onto the end of another string.
 
-{%highlight sql %}
+```sql
 
 -- + operator
 SELECT
@@ -64,7 +64,7 @@ SELECT
 FROM ##table1
 WHERE Id = 1
 
-{% endhighlight %}
+```
 
 Results in...
 
@@ -76,7 +76,7 @@ This can be useful for doing things like creating address strings or firstname a
 
 The second concatenation operator will be familiar to programmers, **+=**.  This can be used when creating variables in SQLServer but not in queries.
 
-{%highlight sql %}
+```sql
 
 -- += operator
 DECLARE @t1 VARCHAR(50) = '';
@@ -85,13 +85,13 @@ SET @t1 += ' World';
 
 SELECT @t1;
 
-{% endhighlight %}
+```
 
 This will display *Hello World*.  In the event you don't know it, you can use **PRINT** instead of **SELECT** to print to the Messages console instead of the results window.
 
 Next up are wildcard operators.  The **%** is used for wildcard matching in SQLServer.  There are a few ways you can use this.  Starts with, ends with, and contains.
 
-{%highlight sql %}
+```sql
 
 -- % operator, starts with
 SELECT Id, text1
@@ -108,7 +108,7 @@ SELECT Id, text1
 FROM ##table1
 WHERE text1 LIKE('%string')
 
-{% endhighlight %}
+```
 
 The **starts with** block will return anything starting with *this* and ending with any number of characters.
 
@@ -136,7 +136,7 @@ The **ends with** block will return anything that contains any number of strings
 
 Now if you want to match a single character instead of any amount of characters, you can use the **_** wilcard character.  This says I only want a single character to be a wilcard.
 
-{%highlight sql %}
+```sql
 
 -- % operator
 SELECT *
@@ -148,7 +148,7 @@ SELECT *
 FROM ##table2
 WHERE text1 LIKE('a_c')
 
-{% endhighlight %}
+```
 
 As can be seen above above, the **%** will match any number of characters in a string that starts with *a* and ends with *c*.
 
@@ -172,14 +172,14 @@ The last set of operators to discuss are as close to regex functionality as we g
 
 In this first example, we are going to specify we want all strings that start with *a* and end with *c* but contain a *c* or a *d* as the middle character.
 
-{%highlight sql %}
+```sql
 
 -- [] operator
 SELECT *
 FROM ##table2
 WHERE text1 LIKE('a[cd]c')
 
-{% endhighlight %}
+```
 
 This will provide the following results.
 
@@ -190,14 +190,14 @@ This will provide the following results.
 
 The second example displays any string that starts with *a* and ends with *c* but contains any character in a range of *b* to *d*, which will include *c*.
 
-{%highlight sql %}
+```sql
 
 -- [] operator with a range
 SELECT *
 FROM ##table2
 WHERE text1 LIKE('a[b-d]c')
 
-{% endhighlight %}
+```
 
 |Id|text1|
 |--|-----|
@@ -207,14 +207,14 @@ WHERE text1 LIKE('a[b-d]c')
 
 Last, we want any string that starts with *a* and ends with *c* but does **not** contain *c* or *d* as the middle character.
 
-{%highlight sql %}
+```sql
 
 -- [^] operator
 SELECT *
 FROM ##table2
 WHERE text1 LIKE('a[^cd]c')
 
-{% endhighlight %}
+```
 
 |Id|text1|
 |--|-----|
