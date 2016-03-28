@@ -9,7 +9,7 @@ As a developer, I run most of my local development environment from a console an
 
 Jumping right in, if you have this script below and execute it with the *nofinal* flag, then cntl+c to terminate the script, the finally block will not execute. If you start it without the *nofinal* flag and terminate with cntl+c, the finally block will execute.
 
-```powershell
+```posh
 param([switch]$nofinal)
 
 Try{
