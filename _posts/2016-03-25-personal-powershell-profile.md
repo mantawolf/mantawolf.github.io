@@ -5,7 +5,7 @@ keywords: "powershell,profile"
 ---
 Just thought I would share my Powershell profile I use.  Anyone have anything they would add?
 
-```powershell
+```posh
 # home path used by various commands within this
 $homePath = "c:\code\"
 Set-Location $homePath
