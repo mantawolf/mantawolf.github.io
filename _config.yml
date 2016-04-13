@@ -61,8 +61,7 @@ version: v3.0
 input: GFM
 
 # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
-syntax_highlighter: rouge
-syntax_highlighter_opts:
+highlighter: rouge
 
 # Use existing pygments syntax highlighting css
 css_class: 'highlight'
