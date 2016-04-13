@@ -55,7 +55,7 @@ paginate: 5
 permalink: /:title/
 
 # The release of Jekyll Now that you're using
-version: 3.0
+version: v3.0
 
 # Use GitHub flavored markdown, including triple backtick fenced code blocks
 input: GFM
