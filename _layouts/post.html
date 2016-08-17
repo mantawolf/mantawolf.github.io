@@ -18,3 +18,36 @@ layout: default
   </div>
   {% include disqus.html %}
 </article>
+<script>
+  new ShareButton({
+    url: "{{ site.url }}{{ page.url }}"",
+    title: "{{ page.title }}",
+    googlePlus: {
+      enabled: true // Enable Google+. [Default: true]
+      url: "{{ site.url }}{{ page.url }}"     // the url you'd like to share to Google+ [Default: config.url]
+    },
+    twitter: {
+      enabled: true      // Enable Twitter. [Default: true]
+      url: "{{ site.url }}{{ page.url }}"          // the url you'd like to share to Twitter [Default: config.url]
+      description: "{{ page.title }}"  // text to be shared alongside your link to Twitter [Default: config.description]
+    },
+    facebook: {
+      enabled: true      // Enable Facebook. [Default: true]
+      load_sdk: false    // Load the FB SDK. If false, it will default to Facebook's sharer.php implementation. 
+                    // NOTE: This will disable the ability to dynamically set values and rely directly on applicable Open Graph tags.
+                    // [Default: true]
+      url: "{{ site.url }}{{ page.url }}"        // the url you'd like to share to Facebook [Default: config.url]
+      appId: 1112433902156084       // Facebook app id for tracking shares. if provided, will use the facebook API
+      title: "{{ page.title }}"        // title to be shared alongside your link to Facebook [Default: config.title]
+      caption:      // caption to be shared alongside your link to Facebook [Default: null]
+      description:  // text to be shared alongside your link to Facebook [Default: config.description]
+      image:        // image to be shared to Facebook [Default: config.image]
+    },
+    linkedin: {
+      enabled: true      // Enable LinkedIn. [Default: true]
+      url: "{{ site.url }}{{ page.url }}"          // the url you'd like to share to LinkedIn [Default: config.url]
+      title: "{{ page.title }}"        // title to be shared alongside your link to LinkedIn [Default: config.title],
+      description:  // text to be shared alongside your link to LinkedIn [Default: config.description]
+    }
+  });
+</script>
