@@ -9,13 +9,16 @@ layout: default
     {{ content }}
   </div>
 
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
+  <div class="row">
+    <div class="date pull-left">
+      Written on {{ page.date | date: "%B %e, %Y" }}
+    </div>
+    <div class="pull-right">
+      <share-button></share-button>
+    </div>
+  </div>
   </div>
 
-  <div class="text-center">
-    <share-button></share-button>
-  </div>
   {% include disqus.html %}
 </article>
 <script>
