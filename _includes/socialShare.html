@@ -1,0 +1,21 @@
+<div class="share-page">
+	<!--the Twitter base https://twitter.com/share --> 
+	<a href="https://twitter.com/share?text={{ page.title }}&url={{ page.shorturl }}&via=marvineads">
+		<img alt="..." class="footer-icon" src="{{ site.baseurl }}/images/social-icons/twitter.png">
+	</a>
+
+	<!--the Facebook base https://www.facebook.com/dialog/share? --> 
+	<a href="https://www.facebook.com/dialog/share?app_id=946372735391329&display=popup&href={{ site.url }}{{ page.url }}&redirect_uri={{ site.url }}{{ page.url }}">
+		<img alt="..." class="footer-icon" src="{{ site.baseurl }}/images/social-icons/facebook.png">
+	</a>
+
+	<!--the LinkedIn base url http://www.linkedin.com/shareArticle?mini=true --> 
+	<a href="http://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}&source={{ site.title }}">
+		<img alt="..." class="footer-icon" src="{{ site.baseurl }}/images/social-icons/linkedin.png">
+	</a> 
+
+	<!--the Google+ link url; base = https://plus.google.com/share? --> 
+	<a href="https://plus.google.com/share?url=http://eadshome.com{{ page.url }}&hl=en-US" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+		<img alt="..." class="footer-icon" src="{{ site.baseurl }}/images/social-icons/google.png">
+	</a> 
+</div>
