@@ -29,7 +29,7 @@ footer-links:
   twitter: mantawolf
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: channel/UCrfHywNkvJigt450kAqphuw # channel/<your_long_string> or user/<user-name>
-  googleplus: UCrfHywNkvJigt450kAqphuw # anything in your profile username that comes after plus.google.com/
+  googleplus: ?rs=UCrfHywNkvJigt450kAqphuw # anything in your profile username that comes after plus.google.com/
   invaders: yes
 
 # Your disqus shortname, entering this will enable commenting on posts
