@@ -81,7 +81,8 @@ And our third query is going to outer join the two tables together but we will f
 ```sql
 SELECT *
 FROM people p
-	LEFT JOIN personTypes pt ON p.personType = pt.personTypeID AND pt.typeName IS NOT NULL
+	LEFT JOIN personTypes pt ON p.personType = pt.personTypeID 
+		AND pt.typeName IS NOT NULL
 ```
 
 |id|name  |personType|personTypeID|typeName|
@@ -103,7 +104,11 @@ The below query uses a subquery to filter out the null personType values in the 
 
 ```sql
 SELECT *
-FROM (SELECT id, name, personType FROM people WHERE personType IS NOT NULL) p
+FROM (
+	SELECT id, name, personType 
+	FROM people 
+	WHERE personType IS NOT NULL
+	) p
 	LEFT JOIN personTypes pt ON p.personType = pt.personTypeID
 ```
 
