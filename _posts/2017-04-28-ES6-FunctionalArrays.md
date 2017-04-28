@@ -5,4 +5,6 @@ desc: "Short tutorial in functional arrays in ES6"
 keywords: "es6,array,functional"
 ---
 
-<iframe src="https://docs.google.com/presentation/d/1MmSuwr6RtXa7QIX6Xzlz_jbinMfoMc8G3qIFSKRQhRE/embed?start=false&loop=false&delayms=5000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+I created a short tutorial on reducing code complexity in JS using functional programming practices with arrays. Enjoy.
+
+<iframe src="https://docs.google.com/presentation/d/1MmSuwr6RtXa7QIX6Xzlz_jbinMfoMc8G3qIFSKRQhRE/embed?start=false&loop=false&delayms=5000" frameborder="0" width="560" height="315" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
