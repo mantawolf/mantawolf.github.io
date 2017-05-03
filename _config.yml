@@ -75,6 +75,7 @@ css_class: 'highlight'
 # Set the Sass partials directory, as we're using @imports
 # You might prefer to minify using :compressed
 sass:
+  sass_dir: _sass
   style: compressed
 # Use the following plug-ins
 
