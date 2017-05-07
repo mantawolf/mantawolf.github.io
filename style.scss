@@ -18,10 +18,10 @@ html {
 }
 
 body {
-	background: $white;
+  background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
-  }
+}
 
 .container {
   margin: 0 auto;
@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 
   line-height: 1.7;
-  margin: 1em 0 15px;
+  margin: 0em 0 15px;
   padding: 0;
 
   @include mobile {
@@ -244,6 +244,14 @@ nav {
 .posts > .post {
   padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
+
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #EAEFFF;
+  border: 3px solid #C8D7FF;
+  background-image: url(resources/Zen_SectionTopRight.jpg);
+  background-repeat: no-repeat;
+  background-position: right top;
 }
 
 .posts > .post:last-child {
@@ -269,6 +277,19 @@ nav {
     text-transform: uppercase;
     font-size: 15px;
   }
+}
+
+.pagination {
+  text-align: center;
+}
+
+.pagination a {
+    border-radius: 5px;
+    text-align: center;
+}
+
+.pagination a.active {
+    border-radius: 5px;
 }
 
 .wrapper-footer {

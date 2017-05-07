@@ -1,0 +1,340 @@
+/* CSS Document */
+/* "Zen Samurai" for CSS Zen Gardens */
+/* All graphics were created by James Montgomery */
+/* Tested in Explorer, Firefox and Opera */
+
+body {
+	margin: 0px;
+	padding: 0px;
+	text-align: right;
+	background-color: #FFF;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+p, ul {
+	font-size: small;
+	line-height: 150%;
+	color: #666;
+}
+
+h1 span {display: none;}
+
+h1 {
+	position: absolute;
+	top: 0px;
+	left: 5px;
+	height: 329px;
+	width: 60px;
+	margin: 5px 0px 0px 0px;
+	padding: 0px;
+	z-index: 3;
+}
+
+h2 {
+	font-size: x-large;
+	font-style: italic;
+	padding: 0px;
+	margin: 2px 0px 0px 0px;
+	color: #999999;
+
+}
+
+h3 {
+	text-align: center;
+	font-variant: small-caps;
+	text-transform: capitalize;
+	color: #333;
+	font-size: x-large;
+	letter-spacing: .25em;
+}
+
+a:link {
+	color: #3366CC;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #3399FF;
+}
+
+a:hover {
+	color: #3366CC;
+	background-color: #99CCFF;
+}
+
+a:active {
+	text-decoration: none;
+	color: #6666CC;
+}
+
+acronym {
+	color: #FF6633;
+	cursor: help;
+}
+
+/* Container with padding to include the samurai picture */
+
+#container {
+	padding: 0px 0px 0px 316px;
+	background-image:  url(Zen_SamuraiLeft.jpg);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-color: #FFF;
+	height:1100px;
+}
+
+/* Page Header */
+
+#pageHeader {
+	height: 200px;
+	background-image:   url(Zen_SamuraiHead.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+/* Quick summary absolute positioned on right of link list below page header */
+
+#quickSummary {
+	position: absolute;
+	width: 150px;
+	top: 200px;
+	left: 327px;
+	padding-right: 10px;
+	border-right-width: 3px;
+	border-right-style: solid;
+	border-right-color: #FFFFFF;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+}
+
+#quickSummary p {
+	font-style: italic;
+	margin-top: 0px;	
+}
+
+#quickSummary p.p2 {
+	margin-bottom: 0px; /* Remove extended border in Firefox */
+}
+
+/* Position intro and supporting text */
+
+#intro, #supportingText {
+	padding: 0px 10px 20px;
+}
+
+/* Preamble */
+
+#preamble {
+	background-color: #475270;
+	padding: 0px 10px 25px 10px;
+	margin-left: 180px;
+	border: 3px solid #C8D7FF;
+	background-image: url(Zen_EnlightGrass.jpg);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+}
+
+#preamble p {
+	color: #ECECEC;
+}
+
+#preamble h3 {
+	margin: 0px;
+	padding: 25px 0px 0px 0px;
+	color: #FFF;	
+}
+
+/* Section blocks */
+
+#explanation, #participation, #benefits, #requirements {
+	padding: 0px;
+	margin-bottom: 10px;
+	background-color: #EAEFFF;
+	border: 3px solid #C8D7FF;
+	background-image:  url(Zen_SectionTopRight.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+#explanation p, #participation p, #benefits p, #requirements p {
+	padding-left: 10px;
+	padding-right: 10px;	
+}
+
+#explanation h3, #participation h3, #benefits h3, #requirements h3 {
+	padding: 35px 0px 0px 0px;
+	margin: 0px;
+	height: 25px;
+	background-image:  url(Zen_SectionTopLeft.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	overflow: visible;
+}
+
+/* Link List */
+
+#linkList {
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	width: 235px;
+	padding: 0px 0px 0px 50px;
+	text-align: left;
+	background-color: #FFF;
+	border: 1px solid #ECECEC;
+	margin-right: 25px;
+	margin-left: 15px;
+	background-image:  url(Zen_LinkBack.jpg);
+	background-repeat: repeat-y;
+	background-position: right top;
+}
+
+#linkList ul {
+	color: #333;
+	list-style-type: lower-roman;
+	margin-right: 10px;
+}
+
+#linkList h3.select {
+	background-image:  url(Zen_LinkTopRight.jpg);
+	background-repeat: no-repeat;
+	height: 45px;
+	background-position: right top;
+	padding: 90px 0px 3px 0px;
+	margin-top: 0px;
+}
+
+#linkList2 {
+	background-image:  url(Zen_LinkBottomRight.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	padding: 0px 0px 80px 0px;
+	margin: 0px;
+}
+
+#linkList a:link {
+	color: #9AB3E6;
+	text-decoration: none;
+}
+
+#linkList a:visited {
+	color: #3399FF;
+}
+
+#linkList a:hover {
+	color: #3366CC;
+	background-color: #99CCFF;
+}
+
+#linkList a:active {
+	text-decoration: none;
+	color: #6666CC;
+}
+
+/* Use extra divs for samurai kanji */
+#extraDiv1{
+	/* Overlap on top right of link list */
+	background-image:  url(Zen_SamuraiKanji.gif);
+	height: 175px;
+	width: 240px;
+	position: absolute;
+	top: 0px;
+	left: 250px;
+	z-index: 3;
+}
+
+#extraDiv2{
+	/* Mid-left */
+	background-image:  url(Zen_SamuraiKanji.gif);
+	height: 175px;
+	width: 240px;
+	position: absolute;
+	top: 885px;
+	left: 0px;
+	z-index: 3;
+}
+
+
+/* calendar css */
+td {
+	font-size: 11px;
+}
+
+th {
+	font-size: 11px;
+}
+
+tr.topdays {
+	background-color: #CED9ED;
+	font-size: 11px; 
+	color : #000000; 
+}
+
+.toprightnumber {
+	font-size: 10px; 
+	font-weight: bold;
+}
+
+.eventinbox {
+	font-size: 10px;	
+}
+
+.currentdate {
+	font-size: 17px; 
+	font-weight: bold;	
+}
+
+.footer {
+	font-size: 10px;
+}
+
+th.topdays{
+	text-align:center;
+	background-color:#CED9ED;
+	color:#000;
+}
+
+td.beforedayboxes {
+	background-color: #ffffff; 
+	color: #000000;
+}
+
+td.dayboxes {
+	background-color: #ffffff; 
+	color: #000000;
+}
+
+td.afterdayboxes {
+	background-color: #ffffff; 
+	color: #000000;
+}
+
+td.highlighteddayboxes {
+	background-color: #EFEFEF; 
+	color: #000000;
+}
+
+.event {
+	font-size: 12px; 
+	font-weight: bold;
+}
+
+.eventdetail {
+	font-size: 11px;
+}
+
+.eventwhen {
+	font-size: 15px; 
+	font-weight: bold;
+}
+
+.addevent {
+	font-size: 12px; 
+	font-weight: bold;
+}
+
+.addeventextrainfo {
+	font-size: 10px;
+}
+/* fac6b1 */
