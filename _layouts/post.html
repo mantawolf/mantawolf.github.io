@@ -1,22 +1,26 @@
 ---
 layout: default
 ---
-
-<article class="post">
-  <h1>{{ page.title }}</h1>
-
-  <div class="entry">
-    {{ content }}
-  </div>
-
-  <div class="row">
-    <div class="col-xs-6 date text-left">
-      Written on {{ page.date | date: "%B %e, %Y" }}
+<div class="posts">
+  <article class="post">  
+    <div class="header">  
+    <img src="/resources/Zen_SectionTopLeft.jpg" />
+    <h1>{{ page.title }}</h1>
     </div>
-  </div>
+    <br />
 
-  {% include disqus.html %}
-</article>
+    <div class="entry">
+      {{ content }}
+    </div>
+    <div class="row">
+      <div class="col-xs-6 date text-left">
+        Written on {{ page.date | date: "%B %e, %Y" }}
+      </div>
+    </div>
+
+    {% include disqus.html %}
+  </article>
+</div>
 <script>
   document.write(
     '<script src="//sharebutton.net/plugin/sharebutton.php?type=vertical&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>'
