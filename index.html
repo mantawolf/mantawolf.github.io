@@ -3,9 +3,12 @@ layout: default
 ---
 <div class="posts">
   {% for post in paginator.posts %}
-    <article class="post">    
-      
+    <article class="post">  
+      <div class="header">  
+      <img src="/resources/Zen_SectionTopLeft.jpg" />
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      </div>
+      <br />
 
       <div class="entry">
         {{ post.excerpt}}
