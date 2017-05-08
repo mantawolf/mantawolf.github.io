@@ -49,6 +49,8 @@ url: http://blog.eadshome.net
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
+repository: mantawolf/mantawolf.github.io
+
 paginate: 5
 
 #
