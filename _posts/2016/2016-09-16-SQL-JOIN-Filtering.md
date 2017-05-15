@@ -13,7 +13,7 @@ Full disclosure, I executed all these in a transaction that I could rollback in 
 
 So given the following data...
 
-```sql
+{% highlight sql linenos %}
 CREATE TABLE people (id INT, name VARCHAR(10), personType INT);
 INSERT INTO  people (id, name, personType)
 VALUES
@@ -33,17 +33,17 @@ VALUES
 	(1, 'Sleepy'),
 	(2, 'Grumpy'),
 	(3, 'Sneezy')
-```
+{% endhighlight %}
 
 ![alt text](../images/2016-09-19/executionPlan1.PNG "Execution plan to create tables")
 
 Our first query is going to inner join the two tables together. This action alone takes 29% of our batch. This also returns the dataset you would expect, the people and what type they are but only for the people that have a type.
 
-```sql
+{% highlight sql linenos %}
 SELECT *
 FROM people p
 	JOIN personTypes pt ON p.personType = pt.personTypeID
-```
+{% endhighlight %}
 
 |id|name  |personType|personTypeID|typeName|
 |--|------|----------|------------|--------|
@@ -58,12 +58,12 @@ FROM people p
 
 Our second query is going to outer join the two tables together and filter the resulting data set. This returns the same dataset as above. This also takes 29% of our batch.
 
-```sql
+{% highlight sql linenos %}
 SELECT *
 FROM people p
 	LEFT JOIN personTypes pt ON p.personType = pt.personTypeID
 WHERE pt.typeName IS NOT NULL
-```
+{% endhighlight %}
 
 |id|name  |personType|personTypeID|typeName|
 |--|------|----------|------------|--------|
@@ -78,12 +78,12 @@ WHERE pt.typeName IS NOT NULL
 
 And our third query is going to outer join the two tables together but we will filter the first table in the JOIN clause instead of creating a WHERE clause. This is where someone could get unexpected results. This query will return exactly what an OUTER LEFT JOIN would return anyways. The filter is almost useless in this scenario. However, it only took 9% of the batch to execute.
 
-```sql
+{% highlight sql linenos %}
 SELECT *
 FROM people p
 	LEFT JOIN personTypes pt ON p.personType = pt.personTypeID 
 		AND pt.typeName IS NOT NULL
-```
+{% endhighlight %}
 
 |id|name  |personType|personTypeID|typeName|
 |--|------|----------|------------|--------|
@@ -102,7 +102,7 @@ And just for fun, a fourth to show performance...
 
 The below query uses a subquery to filter out the null personType values in the people table then joins to the personTypes table. This returns the same dataset as scenario 1 and 2 above but only took 8% of the batch to execute.
 
-```sql
+{% highlight sql linenos %}
 SELECT *
 FROM (
 	SELECT id, name, personType 
@@ -110,7 +110,7 @@ FROM (
 	WHERE personType IS NOT NULL
 	) p
 	LEFT JOIN personTypes pt ON p.personType = pt.personTypeID
-```
+{% endhighlight %}
 
 |id|name  |personType|personTypeID|typeName|
 |--|------|----------|------------|--------|
