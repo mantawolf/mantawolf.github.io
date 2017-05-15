@@ -2,7 +2,7 @@
 layout: post
 title: A Good Morning
 desc: "This is how you start a good day..."
-keywords: "good day,duck hunting"
+tags: good day duck hunting
 ---
 
 This is the best view first thing in the morning...
