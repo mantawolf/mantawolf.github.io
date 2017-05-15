@@ -2,7 +2,7 @@
 layout: post
 title: Basic Programming Concepts
 desc: "This is a short slide deck on very basic programming concepts that apply to any language"
-keywords: "programming,concepts"
+tags: basic programming concepts
 ---
 
 Ever wondered how to get started doing any kind of programming work? It always starts with at least a curious mind, followed by trying to learn fundamentals. Have a look over the slides to learn some basic concepts that apply to any programming language.
