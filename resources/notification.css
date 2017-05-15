@@ -20,22 +20,22 @@
 }
 
 .error {
-	background:#ffecec url('/images/notification/error.png') no-repeat 10px 50%;
+	background:#ffecec url('/resources/notification/error.png') no-repeat 10px 50%;
 	border:1px solid #f5aca6;
 }
 
 .success {
-	background:#e9ffd9 url('/images/notification/success.png') no-repeat 10px 50%;
+	background:#e9ffd9 url('/resources/notification/success.png') no-repeat 10px 50%;
 	border:1px solid #a6ca8a;
 }
 
 .warning {
-	background:#fff8c4 url('/images/notification/warning.png') no-repeat 10px 50%;
+	background:#fff8c4 url('/resources/notification/warning.png') no-repeat 10px 50%;
 	border:1px solid #f2c779;
 }
 
 .notice {
-	background:#e3f7fc url('/images/notification/notice.png') no-repeat 10px 50%;
+	background:#e3f7fc url('/resources/notification/notice.png') no-repeat 10px 50%;
 	border:1px solid #8ed9f6;
 }
 
