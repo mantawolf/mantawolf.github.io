@@ -14,25 +14,39 @@ Full disclosure, I executed all these in a transaction that I could rollback in 
 So given the following data...
 
 {% highlight sql linenos %}
-CREATE TABLE people (id INT, name VARCHAR(10), personType INT);
-INSERT INTO  people (id, name, personType)
+CREATE TABLE people (
+    id INT, 
+    name VARCHAR(10), 
+    personType INT
+);
+INSERT INTO  people (
+    id, 
+    name, 
+    personType
+)
 VALUES
-	(1, 'Test 1', 1),
-	(2, 'Test 2', 1),
-	(3, 'Test 3', 2),
-	(4, 'Test 4', 2),
-	(5, 'Test 5', 3),
-	(6, 'Test 6', 3),
-	(7, 'Test 7', NULL),
-	(8, 'Test 8', NULL),
-	(9, 'Test 9', NULL)
+    (1, 'Test 1', 1),
+    (2, 'Test 2', 1),
+    (3, 'Test 3', 2),
+    (4, 'Test 4', 2),
+    (5, 'Test 5', 3),
+    (6, 'Test 6', 3),
+    (7, 'Test 7', NULL),
+    (8, 'Test 8', NULL),
+    (9, 'Test 9', NULL)
 
-CREATE TABLE personTypes (personTypeID INT, typeName VARCHAR(10));
-INSERT INTO personTypes (personTypeID, typeName)
+CREATE TABLE personTypes (
+    personTypeID INT, 
+    typeName VARCHAR(10)
+);
+INSERT INTO personTypes (
+    personTypeID, 
+    typeName
+)
 VALUES
-	(1, 'Sleepy'),
-	(2, 'Grumpy'),
-	(3, 'Sneezy')
+    (1, 'Sleepy'),
+    (2, 'Grumpy'),
+    (3, 'Sneezy')
 {% endhighlight %}
 
 ![alt text](../images/2016-09-19/executionPlan1.PNG "Execution plan to create tables")
@@ -42,7 +56,7 @@ Our first query is going to inner join the two tables together. This action alon
 {% highlight sql linenos %}
 SELECT *
 FROM people p
-	JOIN personTypes pt ON p.personType = pt.personTypeID
+    JOIN personTypes pt ON p.personType = pt.personTypeID
 {% endhighlight %}
 
 |id|name  |personType|personTypeID|typeName|
@@ -61,7 +75,7 @@ Our second query is going to outer join the two tables together and filter the r
 {% highlight sql linenos %}
 SELECT *
 FROM people p
-	LEFT JOIN personTypes pt ON p.personType = pt.personTypeID
+    LEFT JOIN personTypes pt ON p.personType = pt.personTypeID
 WHERE pt.typeName IS NOT NULL
 {% endhighlight %}
 
@@ -81,8 +95,8 @@ And our third query is going to outer join the two tables together but we will f
 {% highlight sql linenos %}
 SELECT *
 FROM people p
-	LEFT JOIN personTypes pt ON p.personType = pt.personTypeID 
-		AND pt.typeName IS NOT NULL
+    LEFT JOIN personTypes pt ON p.personType = pt.personTypeID 
+	AND pt.typeName IS NOT NULL
 {% endhighlight %}
 
 |id|name  |personType|personTypeID|typeName|
@@ -105,11 +119,11 @@ The below query uses a subquery to filter out the null personType values in the 
 {% highlight sql linenos %}
 SELECT *
 FROM (
-	SELECT id, name, personType 
-	FROM people 
-	WHERE personType IS NOT NULL
-	) p
-	LEFT JOIN personTypes pt ON p.personType = pt.personTypeID
+    SELECT id, name, personType 
+    FROM people 
+    WHERE personType IS NOT NULL
+    ) p
+    LEFT JOIN personTypes pt ON p.personType = pt.personTypeID
 {% endhighlight %}
 
 |id|name  |personType|personTypeID|typeName|
