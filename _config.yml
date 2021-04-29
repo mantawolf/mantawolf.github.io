@@ -21,17 +21,17 @@ theme: jekyll-theme-midnight
 footer-links:
   dribbble: 
   email:
-  facebook: marvin.eads
+  facebook: 
   flickr: 
   github: mantawolf/
   instagram: 
   linkedin: marvin-eads
   pinterest: 
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
-  twitter: mantawolf
+  twitter: 
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: channel/UCrfHywNkvJigt450kAqphuw # channel/<your_long_string> or user/<user-name>
-  googleplus: ?rs=UCrfHywNkvJigt450kAqphuw # anything in your profile username that comes after plus.google.com/
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
 
 # Your disqus shortname, entering this will enable commenting on posts
 disqus: eadshome
